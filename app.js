@@ -29,7 +29,7 @@ function calculate() {
     var moneyspent = Number(costp.value) * Number(quantity.value);
     var currentvalue = Number(currentp.value) * Number(quantity.value);
     var difference = moneyspent - currentvalue;
-    if (difference >= 0) {
+    if (difference > 0) {
         var lossper = difference / moneyspent * 100;
         errMessage("Your loss is ₹" + difference + ". Your loss percentage is " + lossper + "%.");
     }
