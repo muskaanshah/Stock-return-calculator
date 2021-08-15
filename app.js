@@ -30,12 +30,18 @@ function calculate() {
     var currentvalue = Number(currentp.value) * Number(quantity.value);
     var difference = moneyspent - currentvalue;
     if (difference >= 0) {
-        var profitper = difference / moneyspent * 100;
-        errMessage("Your profit is ₹" + difference + ". Your profit percentage is " + profitper + "%.");
+        var lossper = difference / moneyspent * 100;
+        errMessage("Your loss is ₹" + difference + ". Your loss percentage is " + lossper + "%.");
     }
     else {
-        var lossdiff = Math.abs(difference);
-        var lossper = lossdiff / moneyspent * 100;
-        errMessage("Your loss is ₹" + lossdiff + ". Your loss percentage is " + lossper + "%.");
+        var profitdiff = Math.abs(difference);
+        var profitper = profitdiff / moneyspent * 100;
+        errMessage("Your profit is ₹" + profitdiff + ". Your profit percentage is " + profitper + "%.");
+    }
+    if (profitper >= 50) {
+        body.style.backgroundImage = "url('bgprofit.jpg')";
+    }
+    if (lossper >= 50) {
+        body.style.backgroundImage = "url('bgloss.jpg')";
     }
 }
