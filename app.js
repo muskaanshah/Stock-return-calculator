@@ -41,7 +41,10 @@ function calculate() {
     if (profitper >= 50) {
         body.style.backgroundImage = "url('bgprofit.jpg')";
     }
-    if (lossper >= 50) {
+    else if (lossper >= 50) {
         body.style.backgroundImage = "url('bgloss.jpg')";
+    }
+    else {
+        body.style.backgroundImage = "url('bg.jpg')";
     }
 }
